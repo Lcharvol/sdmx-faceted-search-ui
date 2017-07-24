@@ -1,0 +1,4 @@
+Header -> (HeaderTittle, HeaderLangSelector)
+Search -> (SearchBar, SearchButton)
+SideContainer -> (MainCategory -> (SubCategory) {* n} )
+MainContainer -> (MainContainerData)
