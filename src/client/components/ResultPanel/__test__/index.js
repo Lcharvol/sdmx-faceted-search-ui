@@ -10,7 +10,7 @@ describe ('<ResultPanel />', function () {
     const wrapper = shallow(<ResultPanel
       displayShowPanel={() => {}}
       searchValue=""
-      list={[]}
+      dataflows={[]}
     />);
     should(wrapper.find('.resultpanel')).length(1);
   })

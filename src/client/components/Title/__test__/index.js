@@ -8,7 +8,7 @@ const { describe, it } = global;
 describe ('<Title />', function () {
   it('Title should render a title div', function () {
     const wrapper = shallow(<Title name="SDMX" />);
-    should(wrapper.find('.title')).length(1);
+    should(wrapper.find('.title'));
   })
   it('Title should render a h1 elem', function () {
     const wrapper = shallow(<Title name="SDMX" />);

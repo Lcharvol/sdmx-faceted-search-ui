@@ -12,7 +12,7 @@ const reducer = (state = Data, action) => {
     case FACETEDSEARCH:
       return {
         ...state,
-        filterValue: action.value,
+        facetedValue: action.value,
       };
     case MOVESIDEPANEL:
       return {

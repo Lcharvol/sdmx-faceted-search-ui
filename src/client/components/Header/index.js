@@ -3,8 +3,6 @@ import { onlyUpdateForKeys } from 'recompose';
 import PropTypes from 'prop-types';
 import LanguageSelector from '../LanguageSelector';
 
-import './Header.css';
-
 
 const Header = ({ title, language }) => (
   <nav className="pt-navbar pt-intent-success">
@@ -26,4 +24,4 @@ Header.propTypes = {
   language: PropTypes.array.isRequired,
 };
 
-export default onlyUpdateForKeys(['title', 'language'])(Header);
+export default onlyUpdateForKeys(['language'])(Header);

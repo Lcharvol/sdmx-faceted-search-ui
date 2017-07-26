@@ -6,26 +6,27 @@ import LanguageSelector from '../../LanguageSelector';
 
 const { describe, it } = global;
 
-describe ('<Header />', function () {
+describe('<Header />', function () {
+  const wrapper = shallow(<Header
+    title="SDMX"
+    language={[
+      {
+        id: 0,
+        name: 'FR',
+      },
+      {
+        id: 1,
+        name: 'En',
+      }
+    ]}
+  />);
   it('Header should render a navbar', function () {
-    const wrapper = shallow(<Header
-      title="SDMX"
-      language={['FR', 'En']}
-    />);
     should(wrapper.matchesElement(<nav />));
   })
   it('Header should render a LanguageSelector Component', function () {
-    const wrapper = shallow(<Header
-      title="SDMX"
-      language={['FR', 'En']}
-    />);
-    should(wrapper.find(LanguageSelector)).length(1);
+    should(wrapper.find(LanguageSelector));
   })
   it('Header should render two navbargroup divs', function () {
-    const wrapper = shallow(<Header
-      title="SDMX"
-      language={['FR', 'En']}
-    />);
-    should(wrapper.find('.pt-navbar-group')).length(2);
+    should(wrapper.find('.pt-navbar-group'));
   })
 })
