@@ -16,6 +16,10 @@
     "no-confusing-arrow": [0],
     "import/prefer-default-export": [0],
     "import/no-named-as-default": [0],
+<<<<<<< HEAD
     "jsx-a11y/no-static-element-interactions": [0],
+=======
+    "jsx-a11y/no-static-element-interactions": [0]
+>>>>>>> Adding research + pseudo-debounce
   }
 }
