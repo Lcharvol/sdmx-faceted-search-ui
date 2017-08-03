@@ -1,0 +1,7 @@
+.typeselector
+{
+  margin-bottom:10px;
+}
+.searchparams_button:focus {
+  outline: none;
+}

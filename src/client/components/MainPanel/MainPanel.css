@@ -1,0 +1,12 @@
+.mainpanel
+{
+  display: flex;
+  flex-direction: column;
+  padding:2%;
+  min-width:500px;
+}
+.mainpanel_inner
+{
+  display: flex;
+  flex-direction: column;
+}

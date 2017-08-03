@@ -1,3 +1,8 @@
-export const GET_SEARCH_BAR_INPUT = 'GET_SEARCH_BAR_INPUT';
-
-export const getSearchBarInput = value => ({ type: GET_SEARCH_BAR_INPUT, value });
+export const SEARCH = 'SEARCH';
+export const FILTER = 'FILTER';
+export const FACETEDSEARCH = 'FACETEDSEARCH';
+export const MOVESIDEPANEL = 'SHOWSIDEPANEL';
+export const search = value => ({ type: SEARCH, value });
+export const filter = value => ({ type: FILTER, value });
+export const facetedSearch = value => ({ type: FACETEDSEARCH, value });
+export const moveSidePanel = () => ({ type: MOVESIDEPANEL });

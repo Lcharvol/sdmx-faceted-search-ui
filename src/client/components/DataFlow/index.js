@@ -1,16 +1,24 @@
 import React from 'react';
+import { onlyUpdateForKeys } from 'recompose';
 import PropTypes from 'prop-types';
 
-import './data_flow.css';
+import './DataFlow.css';
 
-const DataFlow = ({ result }) => (
-  <div className="dataflow-container">
-    <li>{ result }</li>
+const DataFlow = ({ data, direction }) => (
+  <div className="pt-card pt-elevation-0 dataflowcontainer" style={{ flexDirection: direction }}>
+    <div className="imagecontainer">
+      <img alt="" className="image" src={data.Image} />
+    </div>
+    <div className="dataflowinfo">
+      <p className="dataflowname">{data.Name}</p>
+      <p className="price">{data.Prix} $</p>
+    </div>
   </div>
 );
 
 DataFlow.propTypes = {
-  result: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
+  direction: PropTypes.string.isRequired,
 };
 
-export default DataFlow;
+export default onlyUpdateForKeys(['data', 'direction'])(DataFlow);

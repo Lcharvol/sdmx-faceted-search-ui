@@ -1,4 +1,0 @@
-Header -> (HeaderTittle, HeaderLangSelector)
-Search -> (SearchBar, SearchButton)
-Side -> (FacetedBox -> (Items) {* n} )
-MainContainer -> (MainContainerData)

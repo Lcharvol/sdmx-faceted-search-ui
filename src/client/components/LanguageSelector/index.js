@@ -1,18 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { onlyUpdateForKeys } from 'recompose';
+import { Button, Collapse } from '@blueprintjs/core';
 import PropTypes from 'prop-types';
 
-import './language_selector.css';
+import './LanguageSelector.css';
 
-const LanguageSelector = ({ langs }) => (
-  <div className="language-selector-container">
-    <select>
-      { langs.map(lang => <option key={lang.id}>{lang.value}</option>) }
-    </select>
-  </div>
-);
+class LanguageSelector extends Component {
+  state = {
+    isOpen: false,
+  }
+
+  handleClick = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  }
+
+  render() {
+    const { language } = this.props;
+    const { isOpen } = this.state;
+
+    return (
+      <div className="languageselector">
+        <Button onClick={this.handleClick}>
+          {language[0].name}
+        </Button>
+        <Collapse isOpen={isOpen}>
+          <pre>
+            Fr
+          </pre>
+          <pre>
+            En
+          </pre>
+        </Collapse>
+      </div>
+    );
+  }
+}
 
 LanguageSelector.propTypes = {
-  langs: PropTypes.array.isRequired,
+  language: PropTypes.array.isRequired,
 };
 
-export default LanguageSelector;
+export default onlyUpdateForKeys(['language'])(LanguageSelector);

@@ -1,0 +1,23 @@
+.sortbox
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left:25px;
+  margin-bottom:10px;
+}
+.sortboxtitle
+{
+  padding-right:15px;
+  margin-right:0;
+  margin-bottom: 0;
+}
+.sortboxcontent
+{
+  position:absolute;
+  width:200px;
+  height:200px;
+  margin-left:-200px;
+  top:10px;
+  background-color:white;
+}

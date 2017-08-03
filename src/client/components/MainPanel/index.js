@@ -1,27 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SearchPanel from '../SearchPanel';
+import ResultPanel from '../ResultPanel';
 
-import './main_panel.css';
-import SearchPanel from '../SearchPanel/';
-import ResultsPanel from '../ResultsPanel';
+import './MainPanel.css';
 
-const MainPanel = ({ searchValue, resultItems, searchHandler }) => (
-  <div className="main-panel-container">
-    <SearchPanel
-      className="search-panel-item"
-      searchHandler={searchHandler}
-    />
-    <ResultsPanel
-      className="results-panel-item"
-      resultItems={resultItems}
-      searchValue={searchValue}
-    />
-  </div>
-);
+
+const MainPanel = ({ displayShowPanel, size, dataflows, search, searchValue }) => (
+  <div className="mainpanel">
+    <div style={{ width: `${size}%` }} className="pt-card mainpanel_inner">
+      <SearchPanel
+        search={search}
+      />
+      <ResultPanel
+        dataflows={dataflows}
+        searchValue={searchValue}
+        displayShowPanel={displayShowPanel}
+      />
+    </div>
+  </div>);
 
 MainPanel.propTypes = {
-  resultItems: PropTypes.array.isRequired,
-  searchHandler: PropTypes.func.isRequired,
+  dataflows: PropTypes.array.isRequired,
+  displayShowPanel: PropTypes.func.isRequired,
+  size: PropTypes.string.isRequired,
+  search: PropTypes.func.isRequired,
   searchValue: PropTypes.string.isRequired,
 };
 

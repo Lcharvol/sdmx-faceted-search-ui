@@ -1,0 +1,13 @@
+.searchparams-container_small
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top:25px;
+}
+
+.searchparams-container_big
+{
+  display: flex;
+  margin-top:25px;
+}

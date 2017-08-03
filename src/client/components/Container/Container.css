@@ -1,0 +1,9 @@
+.container
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width:100%;
+  background-color: rgb(245,248,250);
+  padding-bottom: 25px;
+}

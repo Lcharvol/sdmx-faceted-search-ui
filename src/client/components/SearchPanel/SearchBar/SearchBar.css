@@ -1,0 +1,7 @@
+.searchbarcontainer
+{
+  display: flex;
+  width:80%;
+  max-width: 1100px;
+  margin-right:25px;
+}

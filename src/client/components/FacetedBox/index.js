@@ -1,20 +1,27 @@
 import React from 'react';
+import { onlyUpdateForKeys } from 'recompose';
 import PropTypes from 'prop-types';
+import Items from './Items';
 
-import './faceted_box.css';
-import Items from '../Items';
+import './FacetedBox.css';
 
-const FacetedBox = ({ titleName }) => (
-  <div className="faceted-box-container">
-    <p>{ titleName }</p>
-    <ul>
-      <Items />
-    </ul>
+const FacetedBox = ({ name, facets, facetedSearch }) => (
+  <div className="pt-card pt-elevation-0 facetedbox">
+    <p className="facetedboxname">{name}</p>
+    {facets.map((fa) => (
+      <Items
+        key={fa.id}
+        name={fa.name}
+        facetedSearch={facetedSearch}
+      />
+    ))}
   </div>
 );
 
 FacetedBox.propTypes = {
-  titleName: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  facets: PropTypes.array.isRequired,
+  facetedSearch: PropTypes.func.isRequired,
 };
 
-export default FacetedBox;
+export default onlyUpdateForKeys(['name', 'facets'])(FacetedBox);
