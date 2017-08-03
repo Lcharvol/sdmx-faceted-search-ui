@@ -14,11 +14,11 @@ const displayShowPanel = () => {
 describe ('<Container />', function () {
   const wrapper = shallow(<Container
     title="title"
-    list={[]}
+    dataflows={[]}
     language={[]}
     showSidePanel={true}
     displayShowPanel={displayShowPanel}
-    Search={() => {}}
+    search={() => {}}
     searchValue=""
   />);
   it('Container should render a container div', function () {

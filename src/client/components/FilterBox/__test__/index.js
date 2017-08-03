@@ -6,11 +6,36 @@ import { shallow } from 'enzyme';
 
 const { describe, it } = global;
 
-describe ('<FilterBox />', function () {
+describe('<FilterBox />', function () {
   const wrapper = shallow(<FilterBox
     name="test"
-    filters={["test", "test2"]}
-    Filter={() => {}}
+    filters={[
+      {
+        id: 0,
+        name: 'Vélo BMX',
+      },
+      {
+        id: 1,
+        name: 'Vélo de route',
+      },
+      {
+        id: 2,
+        name: 'Vélo électrique',
+      },
+      {
+        id: 3,
+        name: 'Vélo pliable',
+      },
+      {
+        id: 4,
+        name: 'Vélo tout terrain',
+      },
+      {
+        id: 5,
+        name: 'All',
+      }
+    ]}
+    filter={() => {}}
   />)
   it('FilterBox should render a filterbox div', function () {
     should(wrapper.find('.filterbox')).length(1);
@@ -18,14 +43,26 @@ describe ('<FilterBox />', function () {
   it('FilterBox should render a filterboxname div', function () {
     should(wrapper.find('.filterboxname')).length(1);
   })
-  it('FilterBox should render 2 Filter', function () {
-    should(wrapper.find(Filtre)).length(2);
+  it('FilterBox should render 6 Filter', function () {
+    should(wrapper.find(Filtre)).length(6);
   })
   it('FilterBox should render 3 Filter', function () {
     const wrapper = shallow(<FilterBox
       name="test"
-      filters={["test", "test2", "test3"]}
-      Filter={() => {}}
+      filters={[
+        {
+          id: 0,
+          name: 'Vélo BMX',
+        },
+        {
+          id: 1,
+          name: 'Vélo de route',
+        },
+        {
+          id: 2,
+          name: 'Vélo électrique',
+        }
+      ]}
     />)
     should(wrapper.find(Filtre)).length(3);
   })

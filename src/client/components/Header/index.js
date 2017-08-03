@@ -24,4 +24,4 @@ Header.propTypes = {
   language: PropTypes.array.isRequired,
 };
 
-export default onlyUpdateForKeys(['title', 'language'])(Header);
+export default onlyUpdateForKeys(['language'])(Header);

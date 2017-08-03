@@ -5,7 +5,7 @@ import DataFlow from '..';
 
 const { describe, it } = global;
 
-describe ('<Container />', function () {
+describe('<Container />', function () {
   const data = {
     id: 0,
     Name: 'VTT Tout Suspendu 26\'\' Bliss Noir Orange Freins à Disques 21 Vit TC 47 cm 532M',

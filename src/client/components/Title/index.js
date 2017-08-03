@@ -2,8 +2,6 @@ import React from 'react';
 import { onlyUpdateForKeys } from 'recompose';
 import PropTypes from 'prop-types';
 
-import './Title.css';
-
 const Title = ({ name }) => (
   <div className="title">
     <h1>{name}</h1>

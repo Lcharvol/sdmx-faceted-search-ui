@@ -2,6 +2,7 @@ import React from 'react';
 import Media from 'react-media';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
+import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import Container from '../Container';
 import SidePanel from '../SidePanel';
@@ -60,22 +61,29 @@ App.propTypes = {
   showSidePanel: PropTypes.bool.isRequired,
 };
 
-const filterDataFlows = ({ dataflows, searchValue, filterValue, facetedValue }) => {
-  let newDataflows = dataflows;
-  if (facetedValue && facetedValue !== 'All') {
-    newDataflows = newDataflows.filter((li) => (li.Categories === facetedValue));
-  }
-  if (!searchValue && (!filterValue || filterValue === 'All')) {
-    return newDataflows;
-  } else if (searchValue && (!filterValue || filterValue === 'All')) {
-    return newDataflows.filter((li) => (li.Name.toLowerCase().match(searchValue.toLowerCase())));
-  } else if (filterValue && searchValue) {
-    return newDataflows.filter((li) => (li.Name.toLowerCase().match(searchValue.toLowerCase()) && filterValue === li.Type));
-  } else if (!searchValue && (filterValue && filterValue !== 'All')) {
-    return newDataflows.filter((li) => (filterValue === li.Type));
-  }
-};
+const getDataFlows = state => state.dataflows;
+const getFilterValue = state => state.filterValue;
+const getFacetedValue = state => state.facetedValue;
+const getSearchValue = state => state.searchValue;
 
+const filterDataFlows = createSelector(
+  [getDataFlows, getFilterValue, getFacetedValue, getSearchValue],
+  (dataflows, filterValue, facetedValue, searchValue) => {
+    let newDataflows = dataflows;
+    if (facetedValue && facetedValue !== 'All') {
+      newDataflows = newDataflows.filter((li) => (li.Categories === facetedValue));
+    }
+    if (!searchValue && (!filterValue || filterValue === 'All')) {
+      return newDataflows;
+    } else if (searchValue && (!filterValue || filterValue === 'All')) {
+      return newDataflows.filter((li) => (li.Name.toLowerCase().match(searchValue.toLowerCase())));
+    } else if (filterValue && searchValue) {
+      return newDataflows.filter((li) => (li.Name.toLowerCase().match(searchValue.toLowerCase()) && filterValue === li.Type));
+    } else if (!searchValue && (filterValue && filterValue !== 'All')) {
+      return newDataflows.filter((li) => (filterValue === li.Type));
+    }
+  },
+);
 
 const actions = { search, filter, facetedSearch, moveSidePanel };
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Media from 'react-media';
 import Header from '../Header';
 import MainPanel from '../MainPanel';
+import './Container.css';
 
 const Container = ({ title, dataflows, language, showSidePanel, displayShowPanel, search, searchValue }) => (
   <div className="container">
