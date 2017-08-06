@@ -1,3 +1,5 @@
+<a href='https://coveralls.io/github/Lcharvol/sdmx-faceted-search-ui?branch=master'><img src='https://coveralls.io/repos/github/Lcharvol/sdmx-faceted-search-ui/badge.svg?branch=master' alt='Coverage Status' /></a>
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
