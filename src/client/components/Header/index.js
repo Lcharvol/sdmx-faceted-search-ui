@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import LanguageSelector from '../LanguageSelector';
 import './Header.css';
 
-
 const Header = ({ title, languages }) => (
   <nav className="pt-navbar pt-intent-success header">
     <div className="pt-navbar-group pt-align-left">
