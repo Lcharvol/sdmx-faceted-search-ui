@@ -24,7 +24,7 @@ export const handleSearch = (value) => dispatch => {
     return dispatch({ type: RESETDATAFLOW });
   }
   return getTheSearch(value)
-  .then(data => dispatch({ type: GETDATAFLOW, data }));
+  .then(data => { console.log(data); dispatch({ type: GETDATAFLOW, data }); });
 };
 
 export const getFacetedBoxs = () => dispatch => (

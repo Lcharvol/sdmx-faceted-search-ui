@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SearchPanel from '../SearchPanel';
 import ResultPanel from '../ResultPanel';
+import Pager from '../Pager';
 
 import './MainPanel.css';
 
@@ -17,6 +18,7 @@ const MainPanel = ({ displayShowPanel, dataflows, handleSearch, searchValue }) =
         displayShowPanel={displayShowPanel}
         searchValue={searchValue}
       />
+      <Pager />
     </div>
   </div>);
 
