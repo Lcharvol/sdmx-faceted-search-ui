@@ -1,12 +1,9 @@
-.header-container {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+.header
+{
+  min-width:310px;
 }
 .logo
 {
   margin-right:10px;
-  color:rgb(205, 68, 64);
+  color: rgb(193, 51, 41);
 }
