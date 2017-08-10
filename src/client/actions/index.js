@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import R from 'ramda';
+import params from '../../params';
 
 export const HANDLESEARCH = 'HANDLESEARCH';
 export const FILTER = 'FILTER';
@@ -14,7 +14,9 @@ export const filter = value => ({ type: FILTER, value });
 export const facetedSearch = value => ({ type: FACETEDSEARCH, value });
 export const moveSidePanel = () => ({ type: MOVESIDEPANEL });
 
-export const getTheSearch = (value) => axios.post('http://rp3.redpelicans.com:3006/api/search', { search: value });
+const { server: { host, port } } = params;
+
+export const getTheSearch = (value) => axios.post(`http://${host}:${port}/api/search`, { search: value });
 
 export const search = value => ({ type: SEARCH, value });
 

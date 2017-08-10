@@ -4,22 +4,21 @@ import Header from '../Header';
 import MainPanel from '../MainPanel';
 import './Container.css';
 
-const Container = ({ title, dataflows, searchValue, languages, showSidePanel,
-  displayShowPanel, handleSearch }) => (
-    <div className="container">
-      <Header
-        title={title}
-        languages={languages}
-        showSidePanel={showSidePanel}
-        displayShowPanel={displayShowPanel}
-      />
-      <MainPanel
-        dataflows={dataflows}
-        displayShowPanel={displayShowPanel}
-        handleSearch={handleSearch}
-        searchValue={searchValue}
-      />
-    </div>
+const Container = ({ title, dataflows, searchValue, languages, showSidePanel, displayShowPanel, handleSearch }) => (
+  <div className="container">
+    <Header
+      title={title}
+      languages={languages}
+      showSidePanel={showSidePanel}
+      displayShowPanel={displayShowPanel}
+    />
+    <MainPanel
+      dataflows={dataflows}
+      displayShowPanel={displayShowPanel}
+      handleSearch={handleSearch}
+      searchValue={searchValue}
+    />
+  </div>
 );
 
 Container.propTypes = {

@@ -1,9 +1,8 @@
 import { FILTER, FACETEDSEARCH, MOVESIDEPANEL,
   GETFACETEDBOXS, GETDATAFLOW, RESETDATAFLOW, SEARCH } from '../actions';
-import Data from '../data';
 
 
-const reducer = (state = Data, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
     case SEARCH:
       return {

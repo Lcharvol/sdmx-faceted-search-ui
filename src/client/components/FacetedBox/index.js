@@ -1,7 +1,6 @@
 import React from 'react';
 import { onlyUpdateForKeys } from 'recompose';
 import PropTypes from 'prop-types';
-// import Items from './Items';
 
 import './FacetedBox.css';
 
@@ -13,8 +12,6 @@ const FacetedBox = ({ name }) => (
 
 FacetedBox.propTypes = {
   name: PropTypes.string.isRequired,
-  // facets: PropTypes.array.isRequired,
-  // facetedSearch: PropTypes.func.isRequired,
 };
 
 export default onlyUpdateForKeys(['name', 'facets'])(FacetedBox);
