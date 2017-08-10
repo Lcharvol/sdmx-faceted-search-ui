@@ -1,7 +1,7 @@
 .dataflowcontainer
 {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   margin-top:25px;
   width: 100%;
@@ -12,7 +12,7 @@
   margin-top:5px;
   margin-bottom:5px;
 }
-.name, .id
+.name
 {
   color:#0654ba;
   font-size:1.3em;
@@ -21,4 +21,10 @@
 .id
 {
   margin-left:25px;
+}
+.popover_container
+{
+  text-align: left;
+  width:300px;
+  padding:20px;
 }
